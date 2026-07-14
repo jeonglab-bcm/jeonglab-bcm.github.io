@@ -1,4 +1,4 @@
-baseURL = "https://hyunhwan-jeong.github.io/"
+baseURL = "https://jeonglab-bcm.github.io/"
 locale = "en-us"
 title = "Jeong Lab | BCM"
 theme = "paper"
