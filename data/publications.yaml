@@ -1,3 +1,9 @@
+- title: 'Morphology, Not Motion: Benchmarking Vision-Language Models on Multi-Sign Lung Ultrasound Interpretation'
+  authors: Lee J, Papastathopoulos-Katsaros A, Buralkin I, Shaik Z, Lee B, Leung SK, Alavi M, Silva B, Choi B, Liu Z†, Jeong H-H†
+  year: 2026
+  doi: 10.64898/2026.07.23.26358829
+  journal: medRxiv
+  url: https://www.medrxiv.org/content/10.64898/2026.07.23.26358829v1
 - title: 'TEDDY: A Pediatric Foundation Model for Risk Forewarning from ICD-Coded Diagnostic Histories'
   authors: Neeley M, Botas J, Jia J, Yao L, Palacios D, Choi B, Liu Z†, Jeong H-H†
   year: 2026
