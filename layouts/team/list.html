@@ -3,7 +3,7 @@
     <div class="post-content">
       <div class="container">
         {{ $team := where .Site.RegularPages "Type" "team" }}
-        {{ $sections := slice "Principal Investigator" "Graduate Student" "Undergraduate Intern" }}
+        {{ $sections := slice "Principal Investigator" "Graduate Student" "Undergraduate Intern" "Alumni" }}
         {{ range $role := $sections }}
           {{ $members := where $team "Params.role" $role }}
           {{ if $members }}
