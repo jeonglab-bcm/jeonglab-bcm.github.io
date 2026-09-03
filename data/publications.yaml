@@ -1,3 +1,15 @@
+- title: 'BARCS: Beta-Binomial Regression for Multivariate CRISPR Screen Design'
+  authors: Lee K-W, Jeong H-H†
+  year: 2026
+  doi: 10.64898/2026.08.31.748412
+  journal: bioRxiv
+  url: https://www.biorxiv.org/content/10.64898/2026.08.31.748412v1
+- title: 'Institution-Specific LLM Prompting Recovers PHI That De-identification Systems and Their Gold Standards Both Miss'
+  authors: Palacios D, Neeley MB, Otto AA, Dhamodharan S, Woodhouse JP, Lin C-F, Zobeck M, Liu Z, Jeong H-H
+  year: 2026
+  doi: 10.48550/arXiv.2608.17051
+  journal: arXiv
+  url: https://arxiv.org/abs/2608.17051
 - title: 'Morphology, Not Motion: Benchmarking Vision-Language Models on Multi-Sign Lung Ultrasound Interpretation'
   authors: Lee J, Papastathopoulos-Katsaros A, Buralkin I, Shaik Z, Lee B, Leung SK, Alavi M, Silva B, Choi B, Liu Z†, Jeong H-H†
   year: 2026
