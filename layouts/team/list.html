@@ -3,7 +3,7 @@
     <div class="post-content">
       <div class="container">
         {{ $team := where .Site.RegularPages "Type" "team" }}
-        {{ $sections := slice "Principal Investigator" "Graduate Student" "Undergraduate Intern" "Alumni" }}
+        {{ $sections := slice "Principal Investigator" "Graduate Student" "Medical Student" "Undergraduate Intern" "Alumni" }}
         {{ range $role := $sections }}
           {{ $members := where $team "Params.role" $role }}
           {{ if $members }}
@@ -11,35 +11,27 @@
               <h2>{{ $role }}</h2>
               {{ range $members.ByTitle }}
                 <div class="team-member">
-                  <p>
-                    {{ .Title }}
-                    {{ $details := slice }}
-                    {{ with index .Params "former-role" }}
+                  {{ $details := slice }}
+                  {{ with index .Params "former-role" }}
+                    {{ $details = $details | append . }}
+                  {{ end }}
+                  {{ with .Params.program }}
+                    {{ range . }}
                       {{ $details = $details | append . }}
                     {{ end }}
-                    {{ with .Params.program }}
-                      {{ range . }}
-                        {{ $details = $details | append . }}
-                      {{ end }}
+                  {{ end }}
+                  {{ with .Params.affiliation }}
+                    {{ $details = $details | append . }}
+                  {{ end }}
+                  {{ with .Params.summer }}
+                    {{ $details = $details | append (printf "summer %s" .) }}
+                  {{ end }}
+                  {{ with index .Params "co-mentors" }}
+                    {{ range . }}
+                      {{ $details = $details | append (printf "co-mentored by Dr. %s" .) }}
                     {{ end }}
-                    {{ with .Params.affiliation }}
-                      {{ $details = $details | append . }}
-                    {{ end }}
-                    {{ with .Params.summer }}
-                      {{ $details = $details | append (printf "summer %s" .) }}
-                    {{ end }}
-                    {{ with index .Params "co-mentors" }}
-                      {{ range . }}
-                        {{ $details = $details | append (printf "co-mentored by Dr. %s" .) }}
-                      {{ end }}
-                    {{ end }}
-                    {{ with $details }}
-                      ({{ delimit . ", " }})
-                    {{ end }}
-                    {{ with .Params.status }}
-                      &mdash; {{ . }}
-                    {{ end }}
-                  </p>
+                  {{ end }}
+                  <p>{{ .Title }}{{ with $details }} ({{ delimit . ", " }}){{ end }}{{ with .Params.status }} &mdash; {{ . }}{{ end }}</p>
                 </div>
               {{ end }}
             </section>
