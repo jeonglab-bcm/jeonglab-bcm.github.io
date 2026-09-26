@@ -4,7 +4,7 @@
   doi: 10.1002/glia.70230
   journal: Glia
   url: https://onlinelibrary.wiley.com/doi/10.1002/glia.70230
-- title: 'BARCS: Beta-Binomial Regression for Multivariate CRISPR Screen Design'
+- title: 'BARCS: Beta-Binomial Regression for Multivariable CRISPR Screen Designs'
   authors: Lee K-W, Jeong H-H†
   year: 2026
   doi: 10.64898/2026.08.31.748412
@@ -34,7 +34,7 @@
   doi: 10.48550/arXiv.2607.14191
   journal: arXiv
   url: https://arxiv.org/abs/2607.14191
-- title: 'MARRVEL-MCP: A Context-Engineered Natural-Language Query-to-Response Interface for Mendelian Disease Discovery'
+- title: 'MARRVEL-MCP: An Agentic Interface for Mendelian Disease Discovery via Tool-Augmented Context Engineering'
   authors: Everton Z, Botas J, Kim SY, Yao L, Liu Z†, Jeong H-H†
   journal: American Journal of Human Genetics
   year: 2026
