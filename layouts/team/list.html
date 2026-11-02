@@ -3,7 +3,7 @@
     <div class="post-content">
       <div class="container">
         {{ $team := where .Site.RegularPages "Type" "team" }}
-        {{ $sections := slice "Principal Investigator" "Graduate Student" "Medical Student" "Undergraduate Intern" "Alumni" }}
+        {{ $sections := slice "Principal Investigator" "Staff" "Clinical Fellow" "Graduate Student" "Rotation Student" "Medical Student" "Undergraduate Intern" "Alumni" }}
         {{ range $role := $sections }}
           {{ $members := where $team "Params.role" $role }}
           {{ if $members }}
@@ -12,6 +12,9 @@
               {{ range $members.ByTitle }}
                 <div class="team-member">
                   {{ $details := slice }}
+                  {{ with .Params.position }}
+                    {{ $details = $details | append . }}
+                  {{ end }}
                   {{ with index .Params "former-role" }}
                     {{ $details = $details | append . }}
                   {{ end }}
@@ -23,13 +26,20 @@
                   {{ with .Params.affiliation }}
                     {{ $details = $details | append . }}
                   {{ end }}
-                  {{ with .Params.summer }}
-                    {{ $details = $details | append (printf "summer %s" .) }}
+                  {{ with .Params.term }}
+                    {{ $details = $details | append . }}
+                  {{ else }}
+                    {{ with .Params.summer }}
+                      {{ $details = $details | append (printf "summer %s" .) }}
+                    {{ end }}
                   {{ end }}
                   {{ with index .Params "co-mentors" }}
                     {{ range . }}
                       {{ $details = $details | append (printf "co-mentored by Dr. %s" .) }}
                     {{ end }}
+                  {{ end }}
+                  {{ with index .Params "joint-with" }}
+                    {{ $details = $details | append (printf "joint with Dr. %s's lab" .) }}
                   {{ end }}
                   <p>{{ .Title }}{{ with $details }} ({{ delimit . ", " }}){{ end }}{{ with .Params.status }} &mdash; {{ . }}{{ end }}</p>
                 </div>
